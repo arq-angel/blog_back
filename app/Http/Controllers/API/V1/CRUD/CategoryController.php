@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\API\V1;
+namespace App\Http\Controllers\API\V1\CRUD;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\API\V1\StorePostRequest;
-use App\Http\Requests\API\V1\UpdatePostRequest;
-use App\Models\Post;
-use Illuminate\Http\Request;
+use App\Http\Requests\API\V1\CRUD\StoreCategoryRequest;
+use App\Http\Requests\API\V1\CRUD\UpdateCategoryRequest;
+use App\Models\Category;
 
-class PostController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,7 +28,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePostRequest $request)
+    public function store(StoreCategoryRequest $request)
     {
         //
     }
@@ -37,7 +36,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Category $category)
     {
         //
     }
@@ -45,7 +44,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Category $category)
     {
         //
     }
@@ -53,7 +52,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, Post $post)
+    public function update(UpdateCategoryRequest $request, Category $category)
     {
         //
     }
@@ -61,7 +60,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Category $category)
     {
         //
     }

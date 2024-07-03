@@ -20,6 +20,7 @@ class PostFactory extends Factory
         return [
             'category_id' => Category::all()->random()->id,
             'title' => $this->faker->name,
+            'slug' => $this->faker->slug,
             'author' => $this->faker->name,
             'user' => $this->faker->userName,
             'image' => $this->faker->imageUrl,

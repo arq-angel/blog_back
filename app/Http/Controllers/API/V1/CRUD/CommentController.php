@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\API\V1;
+namespace App\Http\Controllers\API\V1\CRUD;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\API\V1\StoreCategoryRequest;
-use App\Http\Requests\API\V1\UpdateCategoryRequest;
-use App\Models\Category;
-use Illuminate\Http\Request;
+use App\Http\Requests\API\V1\CRUD\StoreCommentRequest;
+use App\Http\Requests\API\V1\CRUD\UpdateCommentRequest;
+use App\Models\Comment;
 
-class CategoryController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,7 +28,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCategoryRequest $request)
+    public function store(StoreCommentRequest $request)
     {
         //
     }
@@ -37,7 +36,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show(Comment $comment)
     {
         //
     }
@@ -45,7 +44,7 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $category)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -53,7 +52,7 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCategoryRequest $request, Category $category)
+    public function update(UpdateCommentRequest $request, Comment $comment)
     {
         //
     }
@@ -61,7 +60,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy(Comment $comment)
     {
         //
     }

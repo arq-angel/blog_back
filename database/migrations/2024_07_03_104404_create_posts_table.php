@@ -15,6 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->foreignIdFor(App\Models\Category::class)->constrained()->cascadeOnDelete();
             $table->string('title');
+            $table->string('slug');
             $table->string('author');
             $table->string('user')->nullable();
             $table->string('image')->nullable();

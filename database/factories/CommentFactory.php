@@ -22,7 +22,8 @@ class CommentFactory extends Factory
             'author' => $this->faker->name,
             'email' => $this->faker->safeEmail,
             'content' => $this->faker->paragraph,
-            'status' => $this->faker->randomElement([0, 1, 2]),
+            //'status' => $this->faker->randomElement([0, 1, 2]),
+            'status' => 1
         ];
     }
 }
