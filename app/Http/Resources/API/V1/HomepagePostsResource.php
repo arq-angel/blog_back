@@ -28,6 +28,7 @@ class HomepagePostsResource extends JsonResource
             'comments_count' => $this->comments_count,
             'views_count' => $this->views_count,
             'likes_count' => $this->likes_count,
+            'created_at' => $this->created_at,
             'category' => [
                 'id' => $this->category->id,
                 'title' => $this->category->title,

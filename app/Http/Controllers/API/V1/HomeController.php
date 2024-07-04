@@ -46,20 +46,19 @@ class HomeController extends Controller
                 "message" => "Homepage posts retrieved successfully",
                 "posts" => HomepagePostsResource::collection($posts),
                 "queryParams" => request()->query() ?: null,
-                "meta" => [
-                    "current_page" => $posts->currentPage(),
-                    "from" => $posts->firstItem(),
-                    "last_page" => $posts->lastPage(),
-                    "links" => [
-                        "first" => $posts->url(1),
-                        "last" => $posts->url($posts->lastPage()),
-                        "prev" => $posts->previousPageUrl(),
-                        "next" => $posts->nextPageUrl(),
-                    ],
-                    "path" => $posts->path(),
-                    "per_page" => $posts->perPage(),
-                    "to" => $posts->lastItem(),
-                    "total" => $posts->total(),
+                'meta' => [
+                    'currentPage' => $posts->currentPage(),
+                    'lastPage' => $posts->lastPage(),
+                    'perPage' => $posts->perPage(),
+                    'total' => $posts->total(),
+                    'from' => $posts->firstItem(),
+                    'to' => $posts->lastItem(),
+                ],
+                'links' => [
+                    'first' => $posts->url(1),
+                    'last' => $posts->url($posts->lastPage()),
+                    'prev' => $posts->previousPageUrl(),
+                    'next' => $posts->nextPageUrl(),
                 ],
             ];
         } catch (\Exception $e) {

@@ -6,6 +6,7 @@ use App\Http\Controllers\API\V1\Auth\NewPasswordController;
 use App\Http\Controllers\API\V1\Auth\PasswordResetLinkController;
 use App\Http\Controllers\API\V1\Auth\RegisteredUserController;
 use App\Http\Controllers\API\V1\Auth\VerifyEmailController;
+use App\Http\Controllers\API\V1\ConnectionController;
 use App\Http\Controllers\API\V1\CRUD\CategoryController;
 use App\Http\Controllers\API\V1\CRUD\CommentController;
 use App\Http\Controllers\API\V1\CRUD\PostController;
@@ -49,14 +50,17 @@ Route::middleware(['check.public.token'])->group(function () {
 
     });
 
-    Route::get('/homepagePosts' ,[HomeController::class, 'getHomepagePosts'])->name('getHomepagePosts');
-    Route::get('/homepageNavLinks' ,[HomeController::class, 'getNavLinks'])->name('getNavLinks');
-    Route::get('/homepageCategories' ,[HomeController::class, 'getCategories'])->name('getCategories');
-    Route::get('/homepageRecentPosts' ,[HomeController::class, 'getRecentPosts'])->name('getRecentPosts');
+    Route::get('/homepage/posts' ,[HomeController::class, 'getHomepagePosts'])->name('getHomepagePosts');
+    Route::get('/homepage/navLinks' ,[HomeController::class, 'getNavLinks'])->name('getNavLinks');
+    Route::get('/homepage/categories' ,[HomeController::class, 'getCategories'])->name('getCategories');
+    Route::get('/homepage/recentPosts' ,[HomeController::class, 'getRecentPosts'])->name('getRecentPosts');
 
     Route::get('/posts/{slug}' , [PublicPostPageController::class, 'getPost'])->name('getPost');
     Route::get('/posts/{post}/comments' , [PublicPostPageController::class, 'getComments'])->name('getComments');
     Route::post('/posts/{post}/comments' , [PublicPostPageController::class, 'storeComments'])->name('storeComments');
+
+    Route::get('/' ,[ConnectionController::class, 'isConnected'])->name('isConnected');
+
 
 });
 
